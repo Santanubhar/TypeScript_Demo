@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+ 
+<h2><center>Flight Details</center></h2>
+    <p style="text-align:center;"><img src="h-AIRPLANES-MOBILE-628x314.jpg" style="width:504px;height:228px;" ></p>
+    <center><div style="width:504px;height:350px;border: 1px solid black;">
+    <div>Flight Name:<span id=fName></span></div>
+    <div>Source:<span id=fSource></span></div>
+    <div>Destination:<span id=fDest></span></div>
+    <div>Date:<span id=fDate></span></div>
+    <div>Depart:<span id=fDept></span></div>
+    <div>Duration:<span id=fDur></span></div>
+    Price:<input id=fPrice disabled=true></br>
+    Passenger Name:<input id=pName></input></br>
+    No of Adult Seats:<input type="number" id=adult></input></br>
+    No of Infant Seats:<input type="number" id=infant></input></br>
+    <input type="checkbox" name="Insurance" value="Insurance" id=insurance>Need Insurance<br>
+    Luggage Weight:<input type="number" id=lugg></input></br>
+    <button onclick="calculateFare()">Calculate Weight</button>
+   
+    <div id="cBook" style="display:none;">
+               <div class="row" >
+                    <b> Passenger Name : <span id="tempPname"></span></b>
+                </div>
+                <div class="row" >
+                    <b> Total Price : <span id="tPrice"></span> </b>
+                </div>
+                <div class="row" >
+                    <button id=proceed>Proceed To Book</button>
+                </div>
+    </div>
+     </div>
+    </center>
+</body>
+<script type="text/javascript" src="Home.js"></script>
+<script src="jquery-1.10.2.min.js"></script>
+<script>
+$(document).ready(function() {
+var a=JSON.parse(localStorage.getItem("testObject"));
+$("#fName").html(a[0]);
+$("#fSource").html(a[1]);
+$("#fDest").html(a[2]);
+$("#fDate").html(a[3]);
+$("#fDept").html(a[4]);
+$("#fDur").html(a[5]);
+$("#fPrice").val(a[6]);
+$("#proceed").click(function(){
+    alert("Ticket Booked Successfully");
+});
+});
+</script>
+</html>

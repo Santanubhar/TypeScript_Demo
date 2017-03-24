@@ -1,0 +1,53 @@
+{
+  "data": [
+    {
+      "airline": "Indigo",
+      "source": "Bangalore",
+      "destination": "Trivandrum",
+      "date": "2016/11/25",
+      "depart": "1:30",
+      "duration": "1h 10m",
+      "price": "4500"
+    },
+    {
+      "airline": "AirIndia",
+      "source": "Bangalore",
+      "destination": "Delhi",
+      "date": "2016/12/14",
+      "depart": "7:30",
+      "duration": "2h 20m",
+      "price": "9500"
+      
+    },
+     {
+      "airline": "Air pegasus",
+      "source": "Bangalore",
+      "destination": "Chennai",
+      "date": "2016/12/21",
+      "depart": "5:30",
+      "duration": "50m",
+      "price": "3500"
+      
+    },
+     {
+      "airline": "JetAirways",
+      "source": "Bangalore",
+      "destination": "Mumbai",
+      "date": "2016/12/14",
+      "depart": "2:30",
+      "duration": "2h 10m",
+      "price": "8500"
+      
+    },
+     {
+      "airline": "Indigo",
+      "source": "Bangalore",
+      "destination": "Kolkata",
+      "date": "2016/12/24",
+      "depart": "9:40",
+      "duration": "3h 20m",
+      "price": "12500"
+      
+    }
+  ]
+}

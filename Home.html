@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Display JSON File Data in Datatables | Example</title>
+    <!-- link datatables css -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css" />
+</head>
+<body>
+    <!-- load jquery -->
+   <script src="jquery-1.10.2.min.js"></script>
+    <!-- load datatables js library -->
+   <script src="https://cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js" ></script>
+    
+    <script type="text/javascript">
+    $(document).ready(function() {
+    	var table = $('#empTable').DataTable({
+            "ajax": './names.txt',
+            "columns": [
+                {"data": "airline"},
+                {"data": "source"},
+                {"data": "destination"},
+                {"data": "date"},
+                {"data": "depart"},
+                {"data": "duration"},
+                {"data": "price"},
+                {"defaultContent": "<button>Book Flight</button>"}
+            ]
+        });   
+        
+        $('#empTable tbody').on( 'click', 'button', function () {
+        	
+        	//alert( 'Row index: '+table.row( $(this).parents('tr') ).index());
+            var data = table.row( $(this).parents('tr') ).data();
+            ajaxResultJSON = [];
+            ajaxResultJSON.push(data.airline,data.source,data.destination,data.date,data.depart,data.duration,data.price);
+            localStorage.setItem('testObject', JSON.stringify(ajaxResultJSON));
+
+            alert( 'Row index: '+ajaxResultJSON[0]);
+          /*   function store(){
+                var inputEmail= document.getElementById("airline");
+                localStorage.setItem("email", inputEmail.value);
+                
+               }  */
+            
+            location.href="Second.html";
+        } );
+        
+        
+    });
+    function saving(){
+    	var airlines=document.getElementById("airline").value;
+    	alert(airlines);
+    }
+    </script>
+    <h2><center>Online Flight Booking</center></h2>
+    <p style="text-align:center;"><img src="h-AIRPLANES-MOBILE-628x314.jpg" style="width:504px;height:228px;" ></p>
+    <table id="empTable" class="display" width="100%" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Airline</th>
+                <th>Source</th>
+                <th>Destination</th>
+                <th>Date</th>
+                <th>Depart</th>
+                <th>Duration</th>
+                <th>Price</th>
+                <th></th>
+            </tr>
+        </thead>
+       
+    </table>
+    
+
+</body>
+</html>
